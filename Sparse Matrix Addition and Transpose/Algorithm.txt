@@ -1,0 +1,118 @@
+Algorithm: Sparse Matrix Addition and Transpose Using 3-Tuple Representation
+Step 1:
+        Start.
+
+Step 2:
+
+        Declare two matrices A and B and four tuple arrays:
+        
+        tupleA – First sparse matrix
+        tupleB – Second sparse matrix
+        tupleC – Resultant sparse matrix
+        tupleT – Transpose of the resultant sparse matrix
+Step 3:
+
+        Read the number of rows r and columns c.
+
+Step 4:
+
+        Read the elements of the first matrix A.
+
+Step 5:
+
+        Read the elements of the second matrix B.
+        
+        Conversion of Matrices to 3-Tuple Representation
+Step 6:
+
+        Convert the first matrix into 3-tuple format.
+
+        k ← 1
+        Store (rows, columns, 0) in tupleA[0]
+        
+        for each element A[i][j]
+            if A[i][j] ≠ 0
+                Store (i, j, A[i][j]) in tupleA[k]
+                k ← k + 1
+                Increment non-zero count
+Step 7:
+
+        Similarly, convert the second matrix into 3-tuple format and store it in tupleB.
+
+Step 8:
+
+        Display the tuple representations of both matrices.
+        
+        Addition of Sparse Matrices
+Step 9:
+        
+        Initialize:
+        
+        i ← 1
+        j ← 1
+        k ← 1
+        
+        Copy the header information (rows and columns) into tupleC.
+
+Step 10:
+
+          Compare the row and column positions of the current elements of both tuples.
+          
+          while both tuples have elements
+          
+              if positions are same
+                   Add the values
+                   Store the result in tupleC
+                   i++, j++, k++
+          
+              else if tupleA position comes first
+                   Copy tupleA element to tupleC
+                   i++, k++
+          
+              else
+                   Copy tupleB element to tupleC
+                   j++, k++
+Step 11:
+
+          Copy the remaining elements of tupleA or tupleB, if any, into tupleC.
+          
+          while elements remain in tupleA
+                Copy to tupleC
+          
+          while elements remain in tupleB
+                Copy to tupleC
+Step 12:
+
+          Store the total number of non-zero elements in the header of tupleC.
+
+Step 13:
+
+          Display the resultant sparse matrix in 3-tuple format.
+          
+          Transpose of Resultant Sparse Matrix
+Step 14:
+
+          Store the transpose header.
+          
+          tupleT[0][0] ← tupleC[0][1]
+          tupleT[0][1] ← tupleC[0][0]
+          tupleT[0][2] ← tupleC[0][2]
+Step 15:
+
+          Transpose the resultant tuple.
+          
+          k ← 1
+          
+          for each column
+              for each non-zero element
+                  if current column matches
+                      Interchange row and column
+                      Copy value to tupleT
+                      k++
+Step 16:
+
+          Display the transpose of the resultant sparse matrix in 3-tuple format.
+
+Step 17:
+
+        Stop.
