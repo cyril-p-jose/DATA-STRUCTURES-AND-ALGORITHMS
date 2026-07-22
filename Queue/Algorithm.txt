@@ -1,0 +1,75 @@
+ALGORITHM: QUEUE OPERATIONS USING ARRAY
+
+1. Start.
+
+2. Define a queue of fixed size N.
+
+3. Initialize two variables:
+   a. front = -1
+   b. rear = -1
+   These indicate that the queue is initially empty.
+
+4. Display the following menu repeatedly:
+   1. Enqueue
+   2. Dequeue
+   3. Display
+   4. Peek
+   5. Exit
+
+5. Read the user's choice.
+
+6. If the choice is Enqueue:
+   a. Read the element x to be inserted.
+   b. Check whether rear == N - 1.
+      i. If true, display "Queue Overflow".
+      ii. Otherwise, continue.
+   c. Check whether the queue is empty (front == -1 and rear == -1).
+      i. If true:
+         - Set front = 0.
+         - Set rear = 0.
+         - Insert x into queue[rear].
+      ii. Otherwise:
+         - Increment rear by 1.
+         - Insert x into queue[rear].
+   d. Return to the menu.
+
+7. If the choice is Dequeue:
+   a. Check whether the queue is empty (front == -1 and rear == -1).
+      i. If true, display "Queue Underflow".
+      ii. Otherwise, continue.
+   b. Check whether the queue contains only one element (front == rear).
+      i. If true:
+         - Display the deleted element.
+         - Set front = -1 and rear = -1.
+      ii. Otherwise:
+         - Display the deleted element at queue[front].
+         - Increment front by 1.
+   c. Return to the menu.
+
+8. If the choice is Display:
+   a. Check whether the queue is empty (front == -1 and rear == -1).
+      i. If true, display "Queue is Empty".
+      ii. Otherwise:
+         - Set i = front.
+         - Repeat until i > rear:
+           * Display queue[i].
+           * Increment i by 1.
+   b. Return to the menu.
+
+9. If the choice is Peek:
+   a. Check whether the queue is empty (front == -1 and rear == -1).
+      i. If true, display "Queue is Empty".
+      ii. Otherwise:
+         - Display the front element, queue[front].
+   b. Return to the menu.
+
+10. If the choice is Exit:
+    a. Terminate the program.
+
+11. If the entered choice is invalid:
+    a. Display "Invalid Choice".
+    b. Return to the menu.
+
+12. Repeat Steps 4 to 11 until the user selects Exit.
+
+13. Stop.
