@@ -1,0 +1,55 @@
+ALGORITHM: INFIX TO POSTFIX CONVERSION AND POSTFIX EVALUATION
+
+Step 1: Start.
+
+Step 2: Declare two stacks:
+        a. Operator stack for infix-to-postfix conversion.
+        b. Operand stack for postfix evaluation.
+
+Step 3: Read the infix expression.
+
+PART A: INFIX TO POSTFIX CONVERSION
+
+Step 4: Scan the infix expression from left to right.
+
+Step 5: For each character in the expression:
+        a. If the character is an operand (letter or digit),
+           append it to the postfix expression.
+        b. If the character is '(',
+           push it onto the operator stack.
+        c. If the character is ')',
+           repeatedly pop operators from the operator stack and
+           append them to the postfix expression until '(' is encountered.
+           Remove '(' from the stack.
+        d. If the character is an operator (+, -, *, /, ^),
+           while the operator stack is not empty and the precedence
+           of the operator at the top of the stack is greater than or
+           equal to the precedence of the current operator,
+           pop the operator from the stack and append it to the postfix expression.
+           Push the current operator onto the operator stack.
+
+Step 6: After scanning the entire infix expression,
+        pop all remaining operators from the operator stack
+        and append them to the postfix expression.
+
+Step 7: Display the postfix expression.
+
+PART B: POSTFIX EXPRESSION EVALUATION
+
+Step 8: Scan the postfix expression from left to right.
+
+Step 9: For each character in the postfix expression:
+        a. If the character is an operand (digit),
+           convert it into an integer and push it onto the operand stack.
+        b. If the character is an operator,
+           i. Pop the top two operands from the operand stack.
+           ii. Perform the corresponding arithmetic operation.
+           iii. Push the result back onto the operand stack.
+
+Step 10: After processing the entire postfix expression,
+         the value remaining at the top of the operand stack
+         is the final result.
+
+Step 11: Display the evaluated result.
+
+Step 12: Stop.
